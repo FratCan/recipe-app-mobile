@@ -13,7 +13,7 @@
     import { useState } from "react";
     import { authStyles } from "../../assets/styles/auth.styles";
     import { Image } from "expo-image";
-    import { COLORS } from "../../constants/colors"; // Make sure this path is correct and COLORS is exported
+    import { COLORS } from "../../constants/colors";
     import { Ionicons } from "@expo/vector-icons";
 
     const SignInScreen = () => {
@@ -54,6 +54,7 @@
         <KeyboardAvoidingView
             style={authStyles.keyboardView}
             behavior={Platform.OS === "ios" ? "padding" : "height"}
+            keyboardVerticalOffset={Platform.OS === "android" ? 64 : Platform.OS === "ios" ? 40 : 0}
         >
             <ScrollView
             contentContainerStyle={authStyles.scrollContext}
@@ -107,15 +108,23 @@
 
                 {/*Sign In Button*/}
                 <TouchableOpacity
-                    style={[authStyles.authButton]}
+                    style={[authStyles.authButton, loading && authStyles.buttonDisabled]}
+                    onPress={handleSignIn}
+                    disabled={loading}
+                    activeOpacity={0.8}
                 >
-                    <Text style={authStyles.buttonText}>
-
+                    <Text style={authStyles.buttonText}>{loading ? "Signing In..." : "Sign In"}</Text>
+                </TouchableOpacity>
+                {/*Sign up*/}
+                <TouchableOpacity
+                    style={authStyles.linkContainer}
+                    onPress={() => router.push("/auth/sign-up")}
+                >
+                    <Text style={authStyles.linkText}>
+                        Don&apos;t have an account?<Text style={authStyles.link}>Sign Up</Text>
                     </Text>
                 </TouchableOpacity>
             </View>
-
-
             </ScrollView>
         </KeyboardAvoidingView>
         </View>
