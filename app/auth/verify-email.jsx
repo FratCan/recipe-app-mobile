@@ -3,7 +3,6 @@ import { authStyles } from '../../assets/styles/auth.styles';
 import { COLORS } from "../../constants/colors";
 import { useSignUp } from '@clerk/clerk-expo';
 import { useState } from 'react';
-import { router } from 'expo-router';
 
 const VerifyEmail = ({email,onBack}) => {
 
@@ -60,6 +59,7 @@ const VerifyEmail = ({email,onBack}) => {
                                 keyboardType='number-pad'
                                 autoCapitalize='none'
                             />
+                        </View>
                         {/* verify button*/}
                         <TouchableOpacity
                                 style={[authStyles.authButton, loading && authStyles.buttonDisabled]}
@@ -77,7 +77,6 @@ const VerifyEmail = ({email,onBack}) => {
                                 <Text style={authStyles.link}>Back to Sign Up</Text>
                             </Text>
                         </TouchableOpacity>
-                        </View>
                     </View>
                 </ScrollView>
             </KeyboardAvoidingView>

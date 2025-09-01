@@ -113,7 +113,7 @@
         gap: 16,
     },
     row: {
-        justifyContent: "space-between",
+        justifyContent: "center",
         gap: 16,
     },
     emptyState: {
