@@ -105,7 +105,7 @@
         paddingBottom: 32,
     },
     row: {
-        justifyContent: "space-between",
+        justifyContent: "space-around",
     },
     emptyState: {
         flex: 1,
