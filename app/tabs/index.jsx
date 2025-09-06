@@ -8,8 +8,9 @@ import { Image } from "expo-image";
 import { Ionicons } from '@expo/vector-icons';
 import CategoryFilter from "../../components/CategoryFilter";
 import RecipeCard from "../../components/RecipeCard";
+import LoadingSpinner from "../../components/LoadingSpinner";
 
-const sleep = (ms) => new Promise(resolve => setTimeout(resolve,ms))
+//const sleep = (ms) => new Promise(resolve => setTimeout(resolve,ms))
 
 const HomeScreen = () => {
 
@@ -83,6 +84,7 @@ const HomeScreen = () => {
         loadData();
     },[]);
 
+    if (loading && !refreshing) return <LoadingSpinner message="Loading delicions recipes..." />;
 
     return (
         <View style={homeStyles.container}>

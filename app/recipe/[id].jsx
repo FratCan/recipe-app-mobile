@@ -54,8 +54,9 @@ const RecipeDetailScreen=()=>{
 
                     const recipeWithVideo = {
                         ...transformedRecipe,
-                        youtubeURL: mealData.strYoutube || null,
+                        youtubeUrl: mealData.strYoutube || null,
                     }
+                    setRecipe(recipeWithVideo)
                 }
             } catch (error) {
                 console.error("Error loading recipe detail: ", error);
