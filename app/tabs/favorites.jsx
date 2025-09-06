@@ -66,8 +66,8 @@ const FavoritesScreen =() =>{
                                                 keyExtractor={(item) => item.id.toString()}
                                                 renderItem={({ item }) => <RecipeCard recipe={item}/>}
                                                 numColumns={2}
-                                                columnWrapperStyle={favoritesRecipes.row}
-                                                contentContainerStyle={favoritesRecipes.recipeGrid}
+                                                columnWrapperStyle={favoritesStyles.row}
+                                                contentContainerStyle={favoritesStyles.recipesGrid}
                                                 scrollEnabled={false}
                                                 ListEmptyComponent={<NoFavoritesFound/>}
                                         />
