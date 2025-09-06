@@ -186,7 +186,7 @@ const HomeScreen = () => {
                 {recipes.length > 0 ?(
                     <FlatList
                         data={recipes}
-                        keyExtractor={(item) => item.id.toString()}
+                        keyExtractor={(item, index) => (item?.id ? item.id.toString() : index.toString())}
                         renderItem={({ item }) => <RecipeCard recipe={item}/>}
                         numColumns={2}
                         columnWrapperStyle={homeStyles.row}

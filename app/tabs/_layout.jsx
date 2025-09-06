@@ -3,7 +3,7 @@
     import { Ionicons } from "@expo/vector-icons";
     import { COLORS } from "../../constants/colors";
 
-    const TabsLayout = () => {
+const TabsLayout = () => {
     const { isSignedIn, isLoaded } = useAuth();
 
     if (!isLoaded) return null;
@@ -53,5 +53,5 @@
         />
         </Tabs>
     );
-    };
-    export default TabsLayout;
+};
+export default TabsLayout;

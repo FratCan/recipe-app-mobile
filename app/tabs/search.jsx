@@ -6,6 +6,7 @@ import {searchStyles} from "../../assets/styles/seacrh.styles";
 import { Ionicons } from '@expo/vector-icons';
 import {COLORS} from "../../constants/colors";
 import RecipeCard from "../../components/RecipeCard";
+import LoadingSpinner from "../../components/LoadingSpinner";
 
 const SearchSecreen =() =>{
 
@@ -67,8 +68,7 @@ const SearchSecreen =() =>{
         handleSearch()
     },[debouncedSearchQuery,initialLoading])
 
-    if(initialLoading) return <Text>Loading some data...</Text>
-
+    if(initialLoading) return <LoadingSpinner message="Loading recipes..."/>
 
     return(
         <View style={searchStyles.container}>
@@ -108,12 +108,13 @@ const SearchSecreen =() =>{
                 </View>
                 {loading ? (
                     <View style={searchStyles.loadingContainer}>
-                        <Text>loading...</Text>
+                        <LoadingSpinner message="Searching recipes..." size="small"/>
                     </View>
                 ) : (
                     <FlatList
                         data={recipes}
                         renderItem={({ item }) => <RecipeCard recipe={item}/>}
+                        keyExtractor={(item) => item.id.toString()}
                         numColumns={2}
                         columnWrapperStyle={searchStyles.row}
                         contentContainerStyle={searchStyles.recipesGrid}
