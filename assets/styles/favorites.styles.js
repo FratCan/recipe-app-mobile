@@ -1,7 +1,7 @@
     import { StyleSheet } from "react-native";
-    import { COLORS } from "../../constants/colors";
+import { COLORS } from "../../constants/colors";
 
-    export const favoritesStyles = StyleSheet.create({
+export const favoritesStyles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: COLORS.background,
@@ -106,6 +106,7 @@
     exploreButton: {
         flexDirection: "row",
         alignItems: "center",
+        justifyContent: "center",
         backgroundColor: COLORS.primary,
         paddingHorizontal: 24,
         paddingVertical: 12,
@@ -117,4 +118,11 @@
         fontWeight: "600",
         color: COLORS.white,
     },
-    });
+    addButtonContainer: {
+        position: 'absolute',
+        bottom: 20,
+        left: 20,
+        right: 20,
+        alignItems: 'center',
+    },
+});

@@ -18,6 +18,10 @@ function NoFavoritesFound() {
                 <Ionicons name="search" size={18} color={COLORS.white}/>
                 <Text style={favoritesStyles.exploreButtonText}>Explore Recipes</Text>
             </TouchableOpacity>
+            <TouchableOpacity style={favoritesStyles.exploreButton} onPress={()=> router.push("../recipe/create")}>
+                <Ionicons name="create" size={18} color={COLORS.white}/>
+                <Text style={favoritesStyles.exploreButtonText}>Add Your Own Recipe</Text>
+            </TouchableOpacity>
         </View>
     )
 }
